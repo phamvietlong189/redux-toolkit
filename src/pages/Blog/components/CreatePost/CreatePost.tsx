@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from 'hooks'
 import { IPost } from 'interface/blog'
-import { addPost, editPost, startEditingPost } from 'pages/Blog/blogReducer'
+import { addPost, editPost, setEditingPost } from 'pages/Blog/blogSlice'
 import { useEffect, useMemo, useState } from 'react'
 
 const CreatePost = () => {
@@ -30,12 +30,12 @@ const CreatePost = () => {
   const handleUpdatePost = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
     dispatch(editPost(formData))
-    dispatch(startEditingPost(null))
+    dispatch(setEditingPost(null))
   }
 
   const handleCancel = () => {
     setFormData(initialFormData)
-    dispatch(startEditingPost(null))
+    dispatch(setEditingPost(null))
   }
 
   useEffect(() => {

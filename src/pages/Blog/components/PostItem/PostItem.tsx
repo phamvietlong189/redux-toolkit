@@ -1,6 +1,6 @@
 import { useAppDispatch } from 'hooks'
 import { IPost } from 'interface/blog'
-import { deletePost, startEditingPost } from 'pages/Blog/blogReducer'
+import { deletePost, setEditingPost } from 'pages/Blog/blogSlice'
 
 interface IProps {
   post: IPost
@@ -11,7 +11,7 @@ const PostItem = (props: IProps) => {
   const dispatch = useAppDispatch()
 
   const handleEdit = () => {
-    dispatch(startEditingPost(post))
+    dispatch(setEditingPost(post))
   }
 
   const handleDelete = () => {
