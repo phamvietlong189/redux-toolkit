@@ -1,0 +1,8 @@
+- createSlice = createReducer + createAction
+- Khi nào dùng reducers và extraReducers trong createSlice:
+  +) Dùng reducers: khi muốn generate ra action
+  +) Dùng extraReducers: 
+          Không muốn generate action
+          addMatcher, addDefaultCase
+          Khi dùng với createAsyncThunk
+                        
